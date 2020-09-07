@@ -14,9 +14,21 @@ public class CompterVoyelles {
 			if(phrase.charAt(b)=='e'||phrase.charAt(b)=='E') {
 				e+=1;
 			}
+			if(phrase.charAt(b)=='i'||phrase.charAt(b)=='I') {
+				i+=1;
+			}
+			if(phrase.charAt(b)=='o'||phrase.charAt(b)=='O') {
+				o+=1;
+			}
+			if(phrase.charAt(b)=='u'||phrase.charAt(b)=='U') {
+				U+=1;
+			}
 		}
 		System.out.println("a :"+a);
 		System.out.println("e :"+e);
+		System.out.println("i :"+i);
+		System.out.println("o :"+o);
+		System.out.println("u :"+u);
 
 }
 }
