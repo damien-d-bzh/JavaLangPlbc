@@ -15,18 +15,18 @@ public class NombrePremiersFunct {
 		// TODO Auto-generated method stub
 		
 		int i, nmbrs, choix;
-		boolean continuer=true;
+		char continuer='o';
 		Scanner clavier=new Scanner(System.in);
-		while(continuer) {
-		System.out.print("Voulez-vous verifier une serie de nombre (1) ou un nombre seul (2):");
-		choix=clavier.nextInt();
-		while((choix!=1)&&(choix!=2)) {
+		while((continuer=='o')||(continuer=='O')) {
+		System.out.print("Voulez-vous verifier une serie de nombre (s) ou un nombre seul (n):");
+		choix=clavier.next().charAt(0); //clavier.next().charAt(0) methodes Ã  retenir pour mettre en ploace des choix
+		while((choix!='s')&&(choix!='n')) {
 			//System.out.print("Voulez-vous verifier une serie de \n nombre ou un nombre seul S ou s pour une serie \n et n ou N pour un nombre seul: ");
-			System.out.print("Voulez-vous verifier une serie de nombre (1) ou un nombre seul (2):");
-			choix=clavier.nextInt();
+			System.out.print("Voulez-vous verifier une serie de nombre (s) ou un nombre seul (n):");
+			choix=clavier.next().charAt(0);
 		}
-		if((choix==1)) {
-			System.out.print("Entrer le nombre de valeur à vérifier : ");
+		if((choix=='s')) {
+			System.out.print("Entrer le nombre de valeur ï¿½ vï¿½rifier : ");
 			nmbrs=clavier.nextInt();
 			i=1;
 			while(i<=nmbrs)
@@ -40,8 +40,8 @@ public class NombrePremiersFunct {
 				++i;
 			}
 		}
-		else if(choix==2) {
-			System.out.print("Entrer le nombre à vérifier : ");
+		else if(choix=='n') {
+			System.out.print("Entrer le nombre ï¿½ vï¿½rifier : ");
 			nmbrs=clavier.nextInt();
 			if (EstPremier(nmbrs)) {
 				System.out.printf("Le nombre %d est primaire\n", nmbrs);
@@ -50,11 +50,12 @@ public class NombrePremiersFunct {
 				System.out.printf("Le nombre %d n'est pas primaire\n", nmbrs);
 			}
 		}
-		System.out.print("Continuer true/false :");
-		continuer=clavier.nextBoolean();
+		System.out.print("Continuer o ou O pour oui (toutes autres saisie pour terminer) :");
+		continuer=clavier.next().charAt(0);
 		//clavier.close();
 }
 		//while(continuer);
+		System.out.printf("Programme terminÃ©!");
 		clavier.close();		
 }
 		
